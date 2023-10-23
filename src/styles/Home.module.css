@@ -1,0 +1,81 @@
+.heroImg {
+	width: 100%;
+	height: 80vh;
+	background-color: red;
+	background-position: center center;
+	background-size: cover;
+	z-index: -1;
+}
+
+.home {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.heroGradient {
+	z-index: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 90vh;
+	background: linear-gradient(0deg, var(--bg) 20%, rgba(148, 14, 14, 0))
+}
+
+.titleWrapper {
+	top: 500px;
+	position: absolute;
+	text-wrap: nowrap;
+	overflow: visible;
+	z-index: 3;
+	color: var(--white);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	width: 90%;
+}
+
+.title1 {
+	line-height: 60%;
+	font-size: 12vw;
+	font-weight: 100;
+	letter-spacing: 0.3vw;
+}
+
+.title2 {
+	font-size: 13vw;
+	font-weight: 100;
+	letter-spacing: 0.3vw;
+	color: var(--orange);
+	text-shadow: var(--orange) 0px 0px 100px;
+}
+
+.artworkWrapper {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	top: 10vh;
+	letter-spacing: 3px;
+}
+
+.artwork {
+	font-size: 1.8vh;
+}
+
+.artworkName {
+	color: var(--orange);
+	font-size: 2vh;
+}
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	padding: 2vh 6vh;
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 40px;
+	background-color: var(--bg);
+	transform: translateX(-50%);
+}
+

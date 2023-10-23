@@ -1,0 +1,17 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Jockey One', sans-serif;
+}
+
+body {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+:root {
+	--bg: #16313A;
+	--white: #FCFCFC;
+	--orange: #F44C28;
+	--gray: #1E1E1E;
+}
