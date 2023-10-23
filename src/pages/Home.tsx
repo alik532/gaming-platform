@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import classes from '../styles/Home.module.css'
-import { heroIMG } from '../assets'
+import { heroIMG5 } from '../assets'
 import Container from '../components/Container'
 import {logoSVG} from '../assets'
 import {MdKeyboardDoubleArrowRight} from 'react-icons/md'
@@ -9,7 +9,7 @@ import {CgArrowLongRightC} from 'react-icons/cg'
 const Home:FC = () => {
   return (
 	<div className={classes.home}>
-		<div className={classes.heroImg} style={{backgroundImage: `url(${heroIMG})`}}/>
+		<div className={classes.heroImg} style={{backgroundImage: `url(${heroIMG5})`}}/>
 		<div className={classes.heroGradient} />
 		<div className={classes.header}>
 			<img src={logoSVG} alt=""  className={classes.headerLogo}/>
