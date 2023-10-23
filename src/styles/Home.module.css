@@ -12,17 +12,16 @@
 }
 
 .heroGradient {
-	z-index: 0;
+	z-index: 1;
 	position: absolute;
-	top: 100px;
+	top: 50px;
 	width: 100%;
 	height: 90vh;
 	background: linear-gradient(0deg, var(--bg) 20%, rgba(148, 14, 14, 0))
 }
 
 .titleWrapper {
-	top: 500px;
-	position: absolute;
+	top: 60vh;
 	text-wrap: nowrap;
 	overflow: visible;
 	z-index: 3;
@@ -111,4 +110,13 @@
 .swipeTxt {
 	letter-spacing: 3px;
 	font-size: 2vh;
+}
+
+.buttonWrapper {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

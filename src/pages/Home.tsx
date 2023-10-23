@@ -1,15 +1,16 @@
 import {FC} from 'react'
 import classes from '../styles/Home.module.css'
-import { heroIMG5 } from '../assets'
+import { heroIMG2 } from '../assets'
 import Container from '../components/Container'
 import {logoSVG} from '../assets'
 import {MdKeyboardDoubleArrowRight} from 'react-icons/md'
 import {CgArrowLongRightC} from 'react-icons/cg'
+import MainButton from '../components/MainButton'
 
 const Home:FC = () => {
   return (
 	<div className={classes.home}>
-		<div className={classes.heroImg} style={{backgroundImage: `url(${heroIMG5})`}}/>
+		<div className={classes.heroImg} style={{backgroundImage: `url(${heroIMG2})`}}/>
 		<div className={classes.heroGradient} />
 		<div className={classes.header}>
 			<img src={logoSVG} alt=""  className={classes.headerLogo}/>
@@ -27,6 +28,9 @@ const Home:FC = () => {
 			<div className={classes.titleWrapper}>
 				<h1 className={classes.title1}>BEGIN YOUR EPIC</h1>
 				<h1 className={classes.title2}>JOURNEY</h1>
+			</div>
+			<div className={classes.buttonWrapper}>
+				<MainButton text='Explore' isPatterned={true}/>
 			</div>
 		</Container>
 	</div>

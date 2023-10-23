@@ -1,0 +1,9 @@
+.button {
+	z-index: 1;
+	background-size: cover;
+	width: 90%;
+	padding: 10px 0px;
+	border: 1px solid var(--orange);
+	border-radius: 12px;
+	color: var(--white);
+}
