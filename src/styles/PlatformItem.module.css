@@ -1,0 +1,53 @@
+.item {
+	z-index: 2;
+	justify-content: space-between;
+	color: var(--white);
+	margin: 40px 0px;
+	background-color: var(--bg);
+	box-shadow: rgba(0, 0, 0, 0.32) 0px 4px 10px 4px;
+	display: flex;
+	flex-direction: row;
+	border-radius: 20px;
+	max-width: 580px;
+	letter-spacing: 3px;
+}
+
+.iconWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: var(--gray);
+	height: 200px;
+	width: 40%;
+}
+
+.icon {
+	fill: var(--white);
+	padding: 10px;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	background-color: var(--orange);
+}
+
+.info {
+	padding: 10px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 57%;
+}
+
+.name {
+	font-size: 40px;
+}
+
+.games {
+	font-weight: 100;
+	font-size: 15px;
+}
+.hr {
+	width: 90%;
+}
