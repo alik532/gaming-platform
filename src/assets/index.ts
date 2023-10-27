@@ -19,5 +19,11 @@ import adventureIMG from './adventure.png'
 import strategyIMG from './strategy.png'
 import actionIMG from './action.png'
 import indieIMG from './indie.png'
+import capcomSVG from './capcom.svg'
+import squareEnixSVG from './squareEnix.svg'
+import sonySVG from './sony.svg'
+import valveSVG from './valve.svg'
+import ubisoftSVG from './ubisoft.svg'
+import EASVG from './EA.svg'
 
-export { heroIMG, actionIMG, strategyIMG, indieIMG, adventureIMG, rpgIMG, shooterIMG, logoSVG, heroIMG2, heroIMG3, heroIMG4, heroIMG6, heroIMG5, pattern, aboutIMG, aboutIMG2, aboutIMG3, pcIcon, psIcon, xboxIcon, genresIMG,  } 
+export { heroIMG, actionIMG, capcomSVG, sonySVG, valveSVG, ubisoftSVG, EASVG, squareEnixSVG, strategyIMG, indieIMG, adventureIMG, rpgIMG, shooterIMG, logoSVG, heroIMG2, heroIMG3, heroIMG4, heroIMG6, heroIMG5, pattern, aboutIMG, aboutIMG2, aboutIMG3, pcIcon, psIcon, xboxIcon, genresIMG,  } 

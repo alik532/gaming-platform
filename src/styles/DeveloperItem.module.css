@@ -1,0 +1,56 @@
+.item {
+	position: relative;
+	width: 68%;
+	border-top-right-radius: 150px;
+	border-bottom-right-radius: 150px;
+	background-color: var(--white);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	padding-right: 30px;
+	height: 180px;
+}
+
+.iconWrapper {
+	left: -63px;
+	height: 130px;
+	max-width: 130px;
+	aspect-ratio: 1;	
+	position: absolute;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--orange);
+}
+
+.icon {
+	width: 70%;
+	height: auto;
+	transform: rotate(-45deg);
+}
+
+.info {
+	text-align: end;
+	padding: 0px  20px;
+	width: 100%;
+	justify-content: center;
+	letter-spacing: 3px;
+	align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	height: 180px;
+}
+
+.name {
+	font-size: 28px;
+	color: black;
+}
+
+.projects {
+	color: var(--orange);
+	font-size: 24px;
+}

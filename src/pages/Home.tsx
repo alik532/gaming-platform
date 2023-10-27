@@ -6,8 +6,9 @@ import {MdKeyboardDoubleArrowRight} from 'react-icons/md'
 import {CgArrowLongRightC} from 'react-icons/cg'
 import MainButton from '../components/MainButton'
 import Title from '../components/Title'
-import { heroGames, aboutSections, platforms } from '../data/data'
+import { heroGames, aboutSections, platforms, developers } from '../data/data'
 import PlatformItem from '../components/PlatformItem'
+import DeveloperItem from '../components/DeveloperItem'
 
 const Home:FC = () => {
 
@@ -93,6 +94,14 @@ const Home:FC = () => {
 			</div>
 			<MainButton text='Explore' isPatterned={true}/>
 		</div>
+		<Container>
+			<Title text='Talented developers'/>
+			<div className={classes.developers}>
+				{developers.map(developer => 
+					<DeveloperItem name={developer.name} icon={developer.icon} projects={developer.projects} />	
+				)}
+				</div>
+		</Container>
 	</div>
   )
 }

@@ -170,10 +170,10 @@
 	margin: 100px 0px;
 	background-size: cover;
 	position: relative;
-	margin-bottom: 400px;
 	width: 100%;
-	height: 60vh;
+	height: auto;
 	display: flex;
+	padding: 50px 0px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -238,4 +238,14 @@
 	color: var(--white);
 	font-size: 30px;
 	font-weight: 100;
+}
+
+.developers {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%;
 }
