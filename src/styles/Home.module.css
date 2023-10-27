@@ -215,6 +215,7 @@
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto auto;
 	gap: 30px;
+	column-gap: 10px;
 	justify-items: start;
 }
 

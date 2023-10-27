@@ -1,6 +1,6 @@
 .item {
 	position: relative;
-	width: 68%;
+	width: 65%;
 	border-top-right-radius: 150px;
 	border-bottom-right-radius: 150px;
 	background-color: var(--white);
@@ -10,12 +10,12 @@
 	justify-content: center;
 	gap: 50px;
 	padding-right: 30px;
-	height: 180px;
+	height: 160px;
 }
 
 .iconWrapper {
-	left: -63px;
-	height: 130px;
+	left: -60px;
+	height: 116px;
 	max-width: 130px;
 	aspect-ratio: 1;	
 	position: absolute;
@@ -34,7 +34,8 @@
 
 .info {
 	text-align: end;
-	padding: 0px  20px;
+	padding-right: 14px;
+	padding-left: 50px;
 	width: 100%;
 	justify-content: center;
 	letter-spacing: 3px;
@@ -42,7 +43,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-	height: 180px;
+	height: 160px;
 }
 
 .name {
@@ -51,6 +52,7 @@
 }
 
 .projects {
+	font-size: 18px;
 	color: var(--orange);
-	font-size: 24px;
+	font-weight: 100;
 }
