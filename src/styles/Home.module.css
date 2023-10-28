@@ -4,9 +4,11 @@
 	background-position: center center;
 	background-size: cover;
 	z-index: -1;
+	
 }
 
 .home {
+	overflow-y: hidden;
 	width: 100%;
 	overflow-x: hidden;
 }
@@ -237,7 +239,7 @@
 
 .genresTxt {
 	color: var(--white);
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: 100;
 }
 

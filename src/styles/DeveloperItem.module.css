@@ -14,6 +14,7 @@
 }
 
 .iconWrapper {
+	box-shadow: #F44C2880 0px 0px 70px 10px;
 	left: -60px;
 	height: 116px;
 	max-width: 130px;
