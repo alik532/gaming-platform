@@ -50,14 +50,18 @@ const Home:FC = () => {
 				)}
 		</div>
 		<Container>
-			<div className={classes.buttonWrapper}>
+
+			<div className={classes.buttonWrapper1}>
 				<MainButton text='Explore' isPatterned={true}/>
 			</div>
+			<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>
 			<div className={classes.platforms}>
 				{platforms.map(platform => 
 					<PlatformItem Icon={platform.icon} name={platform.name} games={platform.games}/>	
 				)}
 			</div>
+			<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>
+
 		</Container>
 		<div className={classes.genres} style={{backgroundImage: `url("${genresIMG}")`}}>
 			<div className={classes.genresTopGradient}></div>
@@ -95,6 +99,7 @@ const Home:FC = () => {
 			<MainButton text='Explore' isPatterned={true}/>
 		</div>
 		<Container>
+		<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>
 			<Title text='Talented developers'/>
 			<div className={classes.developers}>
 				{developers.map(developer => 

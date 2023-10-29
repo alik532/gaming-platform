@@ -93,6 +93,7 @@
 }
 
 .swipe {	
+	cursor: pointer;
 	z-index: 9999;
 	filter: opacity(60%);
 	color: var(--white);
@@ -106,6 +107,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	transition: .2s;
+}
+
+.swipe:hover {
+	transform: scaleX(1.1);
+	filter: opacity(100%);
 }
 
 .swipeLogo {	
@@ -118,7 +125,7 @@
 	font-size: 2vh;
 }
 
-.buttonWrapper {
+.buttonWrapper, .buttonWrapper1 {
 	position: relative;
 	z-index: 1;
 	width: 100%;
@@ -136,14 +143,21 @@
 }
 
 .section {
+	cursor: pointer;
 	position: relative;
 	width: 100%;
 	background-position: center center;
 	background-size: cover;
 	height: 40vh;
+	transition: .2s;
+}
+
+.sectionCover:hover {
+	filter: opacity(70%);
 }
 
 .sectionCover {
+	transition: .2s;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -251,4 +265,110 @@
 	flex-wrap: wrap;
 	gap: 20px;
 	width: 100%;
+}
+
+@media (orientation: landscape) {
+
+	.titleWrapper {
+		top: 57vh;
+	}
+
+	.title1 {
+		font-size: 15vh;
+	}
+	
+	.title2 {
+		font-size: 16vh;
+	}
+
+	.buttonWrapper {
+		align-self: center;
+		justify-self: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 80px 0px;
+		width: 50%;
+		margin-left: 22vw;
+		gap: 30px;
+	}
+
+	.section { 
+		height: 50vh;
+	}
+
+	.about {
+		grid-template-columns: 60% 40%;
+		grid-template-rows: auto auto;
+	}
+
+	.section:first-child {
+		grid-row: 1 / 3;
+		height: 100%;
+	}
+
+	.sectionTitle {
+		font-size: 100px;
+	}
+
+	.buttonWrapper1 {
+		width: 20%;
+	}
+
+	.platforms {
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		gap: 40px;
+	}
+
+	.genres {
+		flex-direction: row-reverse;
+		align-items: flex-end;
+		height: 60vh;
+		justify-content: space-around;
+	}
+	
+	.genres > button {
+		margin-left: 70px;
+		width: 400px;
+	}
+
+	.genresContent {
+		justify-content: space-between;
+		height: 90%;
+		width: 50%;
+	}
+
+	.genresTitle {
+		font-size: 80px;
+	}
+
+	.genresList {
+		justify-content:space-between;
+		row-gap: 2vw;
+		padding-right: 200px;
+	}
+
+	.genre > img {
+		width: 3vw;
+	}
+
+	.genre {
+		font-weight: 100;
+		gap: 30px;
+		font-size: 1.6vw;
+	}
+
+	.genresTxt {
+		font-size: 30px;
+	}
+
+	.developers {
+		display: grid;
+		grid-template-columns: 38% 38%;
+		justify-content: space-between;
+		row-gap: 2vw;
+		padding: 0px 5vw;
+	}
 }

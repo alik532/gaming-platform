@@ -57,3 +57,19 @@
 	color: var(--orange);
 	font-weight: 100;
 }
+
+@media (orientation: landscape) {
+	.item {
+		height: 12vw;
+	}
+
+	.iconWrapper {
+		height: 9vw;
+		max-width: none;
+		left: -4.3vw;
+	}
+
+	.name {
+		font-size: 2vw;
+	}
+}
