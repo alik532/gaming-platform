@@ -1,4 +1,5 @@
-import {FC, useState} from 'react'
+import {FC, useState, useEffect } from 'react'
+import { fetchCurrentUser } from '../reducers/userReducer'
 import classes from '../styles/Home.module.css'
 import Container from '../components/Container'
 import {logoSVG, genresIMG, adventureIMG, shooterIMG, strategyIMG, indieIMG, actionIMG, rpgIMG} from '../assets'
@@ -9,13 +10,35 @@ import Title from '../components/Title'
 import { heroGames, aboutSections, platforms, developers } from '../data/data'
 import PlatformItem from '../components/PlatformItem'
 import DeveloperItem from '../components/DeveloperItem'
+import { AiOutlineUser } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
+import { useAppSelector } from '../hooks'
+import { useAppDispatch } from '../store/store'
+import { auth } from '../config/firebase'
 
 const Home:FC = () => {
 
-	const [heroGameIndx, setHeroGameIndx] = useState(0)
+	const dispatch = useAppDispatch()
 
+	useEffect(() => {
+		if (userStatus == 'idle' && auth.currentUser) {
+			console.log(auth.currentUser)
+			dispatch(fetchCurrentUser())
+		}
+	})
+
+	const [heroGameIndx, setHeroGameIndx] = useState(0)
+	const userStatus = useAppSelector(state => state.userReducer.status)
+	const currentUserName = useAppSelector(state => state.userReducer.data.name)
+	console.log(currentUserName)
   return (
 	<div className={classes.home}>
+		<Container>
+			<Link to='/profile' className={classes.profileWrapper}>
+				{currentUserName && <h3 className={classes.profileName}>{currentUserName}</h3>}
+				<AiOutlineUser className={classes.profile}/>
+			</Link>
+		</Container>
 		<div className={classes.heroImg} style={{backgroundImage: `url(${heroGames[heroGameIndx].img})`}} />
 		<div className={classes.heroGradient} />
 		<div className={classes.header}>
@@ -42,26 +65,24 @@ const Home:FC = () => {
 			<Title text={"Biggest game library"}/>
 		</Container>
 		<div className={classes.about}>
-				{aboutSections.map(section => 
-					<div className={classes.section} style={{backgroundImage: `url(${section.img})`}}>
-						<div className={classes.sectionCover}></div>
-						<h1 className={classes.sectionTitle}>{section.txt}</h1>	
-					</div>
-				)}
+			{aboutSections.map(section => 
+				<div key={section.txt} className={classes.section} style={{backgroundImage: `url(${section.img})`}}>
+					<div className={classes.sectionCover}></div>
+					<h1 className={classes.sectionTitle}>{section.txt}</h1>	
+				</div>
+			)}
 		</div>
 		<Container>
-
 			<div className={classes.buttonWrapper1}>
 				<MainButton text='Explore' isPatterned={true}/>
 			</div>
 			<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>
 			<div className={classes.platforms}>
 				{platforms.map(platform => 
-					<PlatformItem Icon={platform.icon} name={platform.name} games={platform.games}/>	
+					<PlatformItem key={platform.name} Icon={platform.icon} name={platform.name} games={platform.games}/>	
 				)}
 			</div>
 			<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>
-
 		</Container>
 		<div className={classes.genres} style={{backgroundImage: `url("${genresIMG}")`}}>
 			<div className={classes.genresTopGradient}></div>
@@ -103,7 +124,7 @@ const Home:FC = () => {
 			<Title text='Talented developers'/>
 			<div className={classes.developers}>
 				{developers.map(developer => 
-					<DeveloperItem name={developer.name} icon={developer.icon} projects={developer.projects} />	
+					<DeveloperItem key={developer.name} name={developer.name} icon={developer.icon} projects={developer.projects} />	
 				)}
 				</div>
 		</Container>

@@ -1,0 +1,38 @@
+.page {
+	background-color: var(--bg);
+	height: 100%;
+}
+
+.exitIcon {
+	width: 30px;
+	height: auto;
+	color: white;
+}
+
+.exitWrapper {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	background-color: rgba(240, 248, 255, 0.192);
+}
+
+.img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 700px;
+	width: auto;
+}
+
+.sun {
+	position: absolute;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+	width: 400px;
+	height: 100%;
+	background: linear-gradient(var(--orange), var(--bg));
+	right: 0;
+}
