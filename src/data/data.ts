@@ -1,8 +1,6 @@
 import { heroIMG, heroIMG2, heroIMG3, heroIMG4, heroIMG5, heroIMG6, aboutIMG, aboutIMG2, aboutIMG3, squareEnixSVG, valveSVG, sonySVG, capcomSVG, EASVG, ubisoftSVG} from '../assets'
 import { BsXbox, BsPlaystation, BsWindows, } from 'react-icons/bs'
 
-
-
 export const heroGames = [
 	{img: heroIMG, txt: "God of War"},
 	{img: heroIMG2, txt: "Ghost of Tsushima"},
@@ -19,9 +17,9 @@ export const aboutSections = [
 ]
 
 export const platforms = [
-	{icon: BsWindows, name: "PC", games: 6729, },
-	{icon: BsPlaystation, name: "PS", games: 517915, },
-	{icon: BsXbox, name: "XBOX", games: 5558, },
+	{icon: BsWindows, name: "PC", games: 6729, slug: 'pc'},
+	{icon: BsPlaystation, name: "PS", games: 517915, slug: 'playstation'},
+	{icon: BsXbox, name: "XBOX", games: 5558, slug: 'xbox'},
 ]
 
 export const developers = [

@@ -1,0 +1,110 @@
+.heroBgImg {
+	width: 100%;
+	height: 40%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	z-index: -2;
+	filter: blur(10px);
+}
+
+.heroGradient {
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 60%;
+	background: linear-gradient(180deg, #16313a00, #16313a);
+}
+
+.hero {
+	border-top-right-radius: 50px;
+	border-top-left-radius: 50px;
+	display: flex;
+	gap: 15px;
+	flex-direction: column;
+	background: linear-gradient(180deg, #121212f5, #12121296)
+}
+
+.heroStats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.heroImg {
+	border-top-right-radius: 50px;
+	border-top-left-radius: 50px;
+	width: 100%;
+	height: auto;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	width: 80%;
+	justify-content: space-between;
+}
+
+.heroName {
+	color: var(--white);
+}
+
+.platforms {
+	display: flex;
+	gap: 10px;
+}
+
+.info {
+	row-gap: 10px;
+	flex-wrap: wrap;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.heroPlatform {
+	padding: 13px;
+	border-radius: 50%;
+	background-color: var(--orange);
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	height: fit-content;
+	justify-content: center;	
+}
+
+.heroPlatformIcon {
+	width: 40px;
+	height: 40px;
+	color: var(--white);
+}
+
+.heroTitle {
+	color: var(--orange);
+	letter-spacing: 2px;
+}
+
+.genres {
+	flex-wrap: wrap;
+	display: flex;
+	gap: 10px;
+}
+
+.ratingsList {
+	display: flex;
+	justify-content: space-between;
+}
+
+@media (orientation: landscape) {
+	.hero {
+		flex-direction: row;
+	}
+
+	.heroImg {
+		width: 50%;
+	}
+}

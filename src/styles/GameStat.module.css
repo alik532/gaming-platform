@@ -1,0 +1,20 @@
+.stat {
+	padding: 0px 15px;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	border-radius: 50px;
+	background: linear-gradient(#ED801B, #F44C28);
+}
+
+.name {
+	text-align: left;
+	font-size: 18px;
+	color: var(--bg);
+}
+
+.value {
+	text-align: right;
+	color: var(--white);
+	font-size: 25px;
+}

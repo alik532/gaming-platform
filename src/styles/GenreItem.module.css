@@ -1,0 +1,16 @@
+.item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border: 2px var(--orange) solid;
+	border-radius: 10px;
+	height: 40px;
+	color: var(--white);
+	gap: 10px;
+	padding: 0px 10px 0px 0px;
+}
+
+.img {
+	width: 70px;
+	height: 100%;
+}
