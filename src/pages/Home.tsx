@@ -11,7 +11,7 @@ import { heroGames, aboutSections, platforms, developers } from '../data/data'
 import PlatformItem from '../components/PlatformItem'
 import DeveloperItem from '../components/DeveloperItem'
 import { AiOutlineUser } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../hooks'
 import { useAppDispatch } from '../store/store'
 import { auth } from '../config/firebase'
@@ -19,6 +19,7 @@ import { auth } from '../config/firebase'
 const Home:FC = () => {
 
 	const dispatch = useAppDispatch()
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		if (userStatus == 'idle' && auth.currentUser) {
@@ -58,7 +59,7 @@ const Home:FC = () => {
 				<h1 className={classes.title2}>JOURNEY</h1>
 			</div>
 			<div className={classes.buttonWrapper}>
-				<MainButton text='Explore' isPatterned={true}/>
+				<MainButton text='Explore' isPatterned={true} onClick={() => {navigate('/feed')}}/>
 				<MainButton text='My Library' isPatterned={false}/>
 			</div>
 			<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>
@@ -74,7 +75,7 @@ const Home:FC = () => {
 		</div>
 		<Container>
 			<div className={classes.buttonWrapper1}>
-				<MainButton text='Explore' isPatterned={true}/>
+				<MainButton text='Explore' isPatterned={true} onClick={() => {navigate('/feed')}}/>
 			</div>
 			<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>
 			<div className={classes.platforms}>
@@ -117,7 +118,7 @@ const Home:FC = () => {
 				</div>
 				<h4 className={classes.genresTxt}>and more ...</h4>
 			</div>
-			<MainButton text='Explore' isPatterned={true}/>
+			<MainButton text='Explore' isPatterned={true} onClick={() => {navigate('/feed')}}/>
 		</div>
 		<Container>
 		<hr style={{border: "1px solid var(--orange)", margin: "50px 0px"}}/>

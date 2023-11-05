@@ -8,25 +8,27 @@ import GameStat from '../components/GameStat'
 import RatingItem from '../components/RatingItem'
 import { platforms } from '../data/data'
 import GenreItem from '../components/GenreItem'
+import Title from '../components/Title'
+import GameCard from '../components/GameCard'
+import MainButton from '../components/MainButton'
 
 const Feed = () => {
+
+	const fetchGames = () => {
+		axios.get(`https://api.rawg.io/api/games?key=7fc5502620c64a2da2116a770ca355ea&page=${!games.length ? 1 : games.length / 20 + 1}`,).then((response: AxiosResponse<IGamesResponse>) => {games.length === 0 ? setGames(response.data.results) : setGames(prev => [...prev, ...response.data.results])})
+	}
 
 	const [games, setGames] = useState<Array<IGame>>([])
 	const otherGames = games.slice(5, games.length)
 	const heroGames = games.slice(0, 5)
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [heroGameIndx, setHeroGameIndx] = useState(0)
 
 	useEffect(() => {
-		const fetchGames = () => {
-			axios.get("https://api.rawg.io/api/games?key=7fc5502620c64a2da2116a770ca355ea",).then((response: AxiosResponse<IGamesResponse>) => setGames(response.data.results))
-		}
-		if (!games.length) {
+		if (games.length === 0) {
 			fetchGames()
 		}
 	})
 
-	console.log(heroGames[heroGameIndx], games, otherGames)
 
 	if (!games.length) {
 		return <div>Loading</div>
@@ -38,6 +40,9 @@ const Feed = () => {
 		<Container>
 			<Header/>
 			<div className={classes.hero}>
+				<div className={classes.heroButton}>
+					<MainButton isPatterned={true} text='Explore'/>
+				</div>
 				<img src={heroGames[heroGameIndx].background_image} alt="" className={classes.heroImg}/>
 				<div className={classes.content}>
 					<h1 className={classes.heroName}>{heroGames[heroGameIndx].name}</h1>
@@ -48,7 +53,7 @@ const Feed = () => {
 					</div>
 					<div className={classes.info}>
 						<div className={classes.platforms}>
-							{platforms.map(platform => 
+							{platforms.filter(pl => heroGames[heroGameIndx].parent_platforms.find(pp => pp.slug == pl.slug) == null).map(platform => 
 								<div className={classes.heroPlatform} key={platform.slug}>
 									<platform.icon className={classes.heroPlatformIcon}/>
 								</div>	
@@ -71,11 +76,21 @@ const Feed = () => {
 				</div>
 			</div>
 			<div className={classes.heroGames}>
-				{heroGames.filter((_game, indx) => indx != heroGameIndx).map(game => 
-					<div className={classes.heroGame} style={{backgroundImage: `url(${game.background_image})`}}>
+				{heroGames.map((game, i) => 
+					<div  onClick={() => setHeroGameIndx(i)} className={classes.heroGame} style={{backgroundImage: `url(${game.background_image})`, display: i == heroGameIndx ? "none" : "initial"}}>
 						<h3 className={classes.heroGameName}>{game.name}</h3>
+						<div className={classes.decor}></div>
 					</div>	
 				)}
+			</div>
+			<Title text='Popular games'/>
+			<div className={classes.gamesList}>
+				{otherGames.map(game => 
+					<GameCard name={game.name} background_image={game.background_image} genres={game.genres}/>
+				)}
+			</div>
+			<div className={classes.load}>
+				<MainButton isPatterned={false} text='Load more' onClick={() => {fetchGames()}}/>
 			</div>
 		</Container>
 	</div>

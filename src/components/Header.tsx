@@ -3,7 +3,6 @@ import { useAppSelector } from '../hooks'
 import { useState, useEffect } from 'react'
 import { AiOutlineUser } from 'react-icons/ai' 
 import { logoSVG } from '../assets'
-import { auth } from '../config/firebase'
 import { fetchCurrentUser } from '../reducers/userReducer'
 import { useAppDispatch } from '../store/store'
 
@@ -13,7 +12,6 @@ const Header = () => {
 	const userStatus = useAppSelector(state => state.userReducer.status)
 	const userName = useAppSelector(state => state.userReducer.data.name)
 
-	console.log(userStatus, auth.currentUser)
 
 	const [searchVal, setSearchVal] = useState("")
 

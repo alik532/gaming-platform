@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
-	align-items: flex-end;
+	align-items: center;
 }
 
 .rating {
@@ -25,26 +25,33 @@
 
 .bar {
 	width: 30px;
-	height: 200px;
+	height: 150px;
 	background-color: transparent;
-	border-radius: 10px;
-	border: 2px solid #F44C2850;
+	border-radius: 30px;
+	border: 2px solid #f44d289b;
 	display: flex;
 	align-items: flex-end;
 }
 
 .full {
-	border-radius: 10px;
-	background-color: aqua;
+	overflow: hidden;
+	border-radius: 60px;
 	width: 30px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
 }
 
 .percent {
 	font-size: 23px;
 }
 
+
 @media (orientation: landscape) {
 	.rating {
-		transform: rotate(35deg);
+		transform: rotate(30deg);
+	}
+
+	.bar {
+		height: 200px;
 	}
 }
