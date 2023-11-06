@@ -5,6 +5,13 @@ export interface IGamesResponse {
 	results: Array<IGame>
 }
 
+export interface IGenresResponse {
+	count: number,
+	next: string | null,
+	previous: string | null,
+	results: Array<IGenre>
+}
+
 export interface IGame {
 	background_image: string,
 	id: number,

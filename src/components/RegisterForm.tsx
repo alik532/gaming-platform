@@ -2,7 +2,7 @@ import React, { useState, } from 'react'
 import classes from '../styles/AuthForm.module.css'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { setDoc, doc } from 'firebase/firestore'
-import { db, auth } from '../config/firebase'
+import { db, auth } from '../firebase/firebase'
 import { useNavigate } from 'react-router-dom'
 import MainButton from './MainButton'
 

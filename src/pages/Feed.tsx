@@ -77,7 +77,7 @@ const Feed = () => {
 			</div>
 			<div className={classes.heroGames}>
 				{heroGames.map((game, i) => 
-					<div  onClick={() => setHeroGameIndx(i)} className={classes.heroGame} style={{backgroundImage: `url(${game.background_image})`, display: i == heroGameIndx ? "none" : "initial"}}>
+					<div key={game.id} onClick={() => setHeroGameIndx(i)} className={classes.heroGame} style={{backgroundImage: `url(${game.background_image})`, display: i == heroGameIndx ? "none" : "initial"}}>
 						<h3 className={classes.heroGameName}>{game.name}</h3>
 						<div className={classes.decor}></div>
 					</div>	
@@ -86,7 +86,7 @@ const Feed = () => {
 			<Title text='Popular games'/>
 			<div className={classes.gamesList}>
 				{otherGames.map(game => 
-					<GameCard name={game.name} background_image={game.background_image} genres={game.genres}/>
+					<GameCard key={game.id} id={game.id} name={game.name} background_image={game.background_image} genres={game.genres}/>
 				)}
 			</div>
 			<div className={classes.load}>

@@ -186,7 +186,9 @@
 
 	.heroImg {
 		border-top-right-radius: 0px;
-		width: 50%;
+		min-width: 55%;
+		max-width: 60%;
+		flex-grow: 1;
 		border-right: none;
 	}
 

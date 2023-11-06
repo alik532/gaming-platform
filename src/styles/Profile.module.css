@@ -1,0 +1,148 @@
+.profile {
+	letter-spacing: 1.5px;
+}
+
+.heroImg {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	height: 40vh;
+	z-index: -1;
+}
+
+.main {
+	margin: 20px 0px;
+	gap: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.pfp {
+	border: 1px var(--white) solid;
+	border-radius: 50%;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bg);
+}
+
+.pfpImg {
+	color: var(--white);
+	width: 30px;
+	height: 30px;
+}
+
+.name {
+	font-size: 45px;
+	color: var(--bg);
+	-webkit-text-stroke: 0.2px var(--white);
+}
+
+.statWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+}
+
+.stats {
+	color: var(--white);
+	display: grid;
+	width: 100%;
+	grid-template-columns: auto auto;
+	grid-template-columns: auto auto;
+	padding: 17px;
+	border-radius: 20px;
+	backdrop-filter: blur(4px);
+	background-color: rgba(0, 0, 0, 0.58);
+}
+
+.buttonWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+}
+
+.stat {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.statName {
+	text-wrap: wrap;
+	font-weight: 100;
+	letter-spacing: 1.5px;
+	font-size: 20px;
+	color: var(--white);
+}
+
+.statValue {
+	font-weight: 100;
+	font-size: 40px;
+	color: var(--orange);
+	text-decoration: underline 2px var(--orange);
+	text-underline-offset: 8px;
+}
+
+.favoriteGames {
+	display: flex;
+	flex-direction: column;
+	color: var(--white);
+}
+
+.logoutButton {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 100px;
+	height: 40px;
+}
+
+@media (orientation: landscape) {
+	.statWrapper {
+		flex-direction: row;
+	}
+
+	.stats {
+		display: flex;
+		gap: 10px;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.buttonWrapper {
+		width: 30%;
+	}
+
+	.statValue {
+		font-size: 50px;
+	}
+
+	.pfpImg {
+		width: 60px;
+		height: 60px;
+	}
+
+	.main {
+		margin-top: 15vh;
+	}
+
+	.name {
+		font-size: 60px;
+	}
+
+	.logoutButton {
+		width: 140px;
+		top: 25vh;
+		right: 60px;
+	}
+}

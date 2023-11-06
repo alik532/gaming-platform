@@ -1,25 +1,22 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { auth, db, } from '../config/firebase'
+import { createSlice } from '@reduxjs/toolkit'
 import { PayloadAction } from '@reduxjs/toolkit'
-import { collection, doc, getDoc } from 'firebase/firestore'
+import { addCompletedGame, fetchCurrentUser } from '../helpers/thunks'
+
 
 interface IUserReducer {
 	status: string
 	error: string | undefined
-	data: {
-		userId: string | undefined,
-		name: string | undefined,
-		platform?: string,
-		completedGames?: number,
-		followingDevs?: number,
-		preferredGenre?: string,
-		favoriteGames?: Array<{game: string}>
-	}
+	data: IResponse
 }
 
 interface IResponse {
 	userId: string | undefined
 	name: string | undefined,
+	platform?: string,
+	completed_games: Array<number>,
+	followingDevs?: number,
+	preferredGenre?: string,
+	favoriteGames?: Array<{game: string}>
 }
 
 const initialState:IUserReducer = {
@@ -28,17 +25,10 @@ const initialState:IUserReducer = {
 	data: {
 		userId: undefined,
 		name: undefined,
+		completed_games: []
 	}
 }
 
-export const fetchCurrentUser = createAsyncThunk('user/fetchUser', async function name() 	
- {
-	const collectionRef = collection(db, 'users')
-	console.log("user ref: " + collectionRef)
-	const userDocRef = doc(collectionRef, auth.currentUser?.uid)
-	console.log(userDocRef)	
-	return {name: (await getDoc(userDocRef)).get('name'), userId: userDocRef.id}
-})
 
 export const userSlice = createSlice({
 	name: "user",
@@ -47,6 +37,11 @@ export const userSlice = createSlice({
 		setUser: (state, action:PayloadAction<{id: string, name: string}>) => {
 			state.data.userId = action.payload.id
 			state.data.name = action.payload.name
+		},
+		clearUser: (state) => {
+			state.data = initialState.data
+			state.status = initialState.status
+			state.error = initialState.error
 		}
 	},
 	extraReducers: function(builder) {
@@ -54,13 +49,23 @@ export const userSlice = createSlice({
 			.addCase(fetchCurrentUser.pending, (state) => {
 				state.status = 'loading'
 			})
-			.addCase(fetchCurrentUser.fulfilled, (state, action: PayloadAction<IResponse>) => {
+			.addCase(fetchCurrentUser.fulfilled, (state, action: PayloadAction<IResponse | null>) => {
 				state.status = 'succeeded'
-				state.data.name = action.payload.name
+				console.log(action.payload)
+				if (action.payload == null) {
+					state.status = 'error'
+					return;
+				}
+				state.data = action.payload
 			})
 			.addCase(fetchCurrentUser.rejected, (state, action) => {
 				state.status = 'error'
 				state.error = action.error.message
+			})
+			.addCase(addCompletedGame.fulfilled, (state, action: PayloadAction<number | null>) => {
+				if (action.payload)
+					if (state.data.completed_games.find(gameId => gameId == action.payload) == null)
+						state.data.completed_games.push(action.payload)
 			})
 
 	}
@@ -68,5 +73,4 @@ export const userSlice = createSlice({
 
 export default userSlice.reducer
 
-export const selectUserName = (state: IUserReducer) => state.data
-export const selectUserId = (state: IUserReducer) => state.data
+export const {setUser, clearUser} = userSlice.actions

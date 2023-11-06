@@ -1,5 +1,4 @@
-import {FC, useState, useEffect } from 'react'
-import { fetchCurrentUser } from '../reducers/userReducer'
+import {FC, useState } from 'react'
 import classes from '../styles/Home.module.css'
 import Container from '../components/Container'
 import {logoSVG, genresIMG, adventureIMG, shooterIMG, strategyIMG, indieIMG, actionIMG, rpgIMG} from '../assets'
@@ -13,29 +12,19 @@ import DeveloperItem from '../components/DeveloperItem'
 import { AiOutlineUser } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../hooks'
-import { useAppDispatch } from '../store/store'
-import { auth } from '../config/firebase'
+import { auth } from '../firebase/firebase'
 
 const Home:FC = () => {
 
-	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
 
-	useEffect(() => {
-		if (userStatus == 'idle' && auth.currentUser) {
-			console.log(auth.currentUser)
-			dispatch(fetchCurrentUser())
-		}
-	})
-
 	const [heroGameIndx, setHeroGameIndx] = useState(0)
-	const userStatus = useAppSelector(state => state.userReducer.status)
 	const currentUserName = useAppSelector(state => state.userReducer.data.name)
-	console.log(currentUserName)
+	
   return (
 	<div className={classes.home}>
 		<Container>
-			<Link to='/profile' className={classes.profileWrapper}>
+			<Link to={auth.currentUser ? `profile/${auth.currentUser.uid}` : '/signin'} className={classes.profileWrapper}>
 				{currentUserName && <h3 className={classes.profileName}>{currentUserName}</h3>}
 				<AiOutlineUser className={classes.profile}/>
 			</Link>

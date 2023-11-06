@@ -5,7 +5,7 @@ import SignInForm from '../components/SignInForm'
 import RegisterForm from '../components/RegisterForm'
 import Container from '../components/Container'
 import {IoIosArrowBack} from 'react-icons/io'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Auth:FC<{path: string}> = ({path}) => {
 
@@ -23,6 +23,7 @@ const Auth:FC<{path: string}> = ({path}) => {
 				{path === '/signin' ? <SignInForm/> : <RegisterForm/>}
 			</div>
 		</Container>
+		{path === '/signin' ? <h2>Don't have an account yet? <Link to='/register'>Register</Link></h2> : <h2>Already have an accout?<Link to='/signin'>Log in</Link></h2>}
 	</div>
   )
 }

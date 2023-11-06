@@ -3,26 +3,30 @@
 	align-items: center;
 	cursor: pointer;
 	position: relative;
-	background-color: #121212;
+	background-color: #a24530;
 	display: flex;
 	flex-direction: column;
 	width: 90%;
 	max-width: 400px;
 	align-items: center;
 	color: var(--white);
-	box-shadow: rgba(0, 0, 0, 0.565) 0px 10px 20px 0px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.716) 0px 0px 20px 2px;
 }
 
-.title {
+.name {
 	width: 100%;
-	font-size: 20px;
+	font-size: 30px;
 	color: var(--white);
 	text-align: center;
+	transition: .2s;
+	padding-bottom: 4px;
 }
 
 .img {
+	box-shadow: black 0px 5px 10px 0px;
 	transition: .2s;
-	transform: translateY(-20px);
+	transform: translateY(-10px);
 	border-top-right-radius: 30px;
 	border-top-left-radius: 30px;
 	background-size: cover;
@@ -32,24 +36,70 @@
 	height: 220px;
 }
 
-.glow {
-	transition: .1s;
-	position: absolute;
-	width: 90%;
-	height: 180px;
-	filter: blur(70px) brightness(1.5) opacity(0);
-	top: -40px;
-
-}
-
-.card:hover .glow {
-	filter: blur(70px) brightness(1.5) opacity(0.35);
-}
-
 .card:hover .img {
-	transform: translateY(-25px);
+	transform: translateY(-15px);
+}
+
+.card:hover {
+	background-color: var(--orange);
+}
+
+.card:hover .buttonsWrapper {
+	transform: translateY(0px);
+	opacity: 1;
+	display: flex;
 }
 
 .genres {
 	display: none;
+}
+
+.buttonsWrapper {
+	display: flex;
+	color: var(--orange);
+	transform: translateY(-10px);
+	transition: .3s;
+	position: absolute;
+	z-index: 2;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	width: 100%;
+	bottom: 8px;
+	opacity: 0;
+	flex-direction: column;
+}
+
+.buttonsWrapper > button {
+
+	width: 80%;
+	color: var(--white);
+	transition: 0s;
+	letter-spacing: 1.5px;
+	font-size: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 6px 10px;
+	border: none;
+	font-weight: 100;
+	background-color: transparent;
+	box-shadow: inset black 0px 0px 15px 8px;
+	border: none;
+}
+
+.exploreButton {
+	transition: .3s;
+}
+
+.exploreButton:hover {
+	transition: .3s;
+	background-color: black;
+	color: var(--orange);
+}
+
+.completedButton:hover {
+	transition: .3s;
+	background-color: black;
+	color: #80f428;
 }

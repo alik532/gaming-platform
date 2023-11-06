@@ -25,5 +25,6 @@ import sonySVG from './sony.svg'
 import valveSVG from './valve.svg'
 import ubisoftSVG from './ubisoft.svg'
 import EASVG from './EA.svg'
+import profileIMG from './profile.png'
 
-export { heroIMG, actionIMG, capcomSVG, sonySVG, valveSVG, ubisoftSVG, EASVG, squareEnixSVG, strategyIMG, indieIMG, adventureIMG, rpgIMG, shooterIMG, logoSVG, heroIMG2, heroIMG3, heroIMG4, heroIMG6, heroIMG5, pattern, aboutIMG, aboutIMG2, aboutIMG3, pcIcon, psIcon, xboxIcon, genresIMG,  } 
+export {profileIMG, heroIMG, actionIMG, capcomSVG, sonySVG, valveSVG, ubisoftSVG, EASVG, squareEnixSVG, strategyIMG, indieIMG, adventureIMG, rpgIMG, shooterIMG, logoSVG, heroIMG2, heroIMG3, heroIMG4, heroIMG6, heroIMG5, pattern, aboutIMG, aboutIMG2, aboutIMG3, pcIcon, psIcon, xboxIcon, genresIMG,  } 
