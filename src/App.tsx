@@ -7,12 +7,9 @@ import Feed from './pages/Feed'
 import { auth } from './firebase/firebase'
 import { useAppDispatch } from './store/store'
 import { fetchCurrentUser } from './helpers/thunks' 
-import axios, { AxiosResponse } from 'axios'
-import { IGenresResponse } from './data/types'
+import GamePage from './pages/GamePage'
 
 function App() {
-
-  axios.get(`https://api.rawg.io/api/genres?key=7fc5502620c64a2da2116a770ca355ea`).then((response: AxiosResponse<IGenresResponse>) => console.log(response.data))
 
   const dispatch = useAppDispatch()
   auth.onAuthStateChanged(() => dispatch(fetchCurrentUser()))
@@ -20,6 +17,7 @@ function App() {
   return (
       <div className='App'>
         <Routes>
+          <Route path='/game/:id' element={<GamePage />}/>
           <Route path='/' element={<Home/>}/>
           <Route path='/profile/:id' element={<Profile/>}/>
           <Route path='/signin' element={<Auth path='/signin'/>}/>

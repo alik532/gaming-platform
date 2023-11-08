@@ -3,14 +3,14 @@
 	width: fit-content;
 	display: flex;
 	flex-direction: column;
-	border-radius: 50px;
-	background: linear-gradient(#ED801B, #F44C28);
+	border-radius: 5px;
+	background: #1C1E20;
 }
 
 .name {
 	font-size: 13px;
 	text-align: left;
-	color: var(--bg);
+	color: var(--orange);
 }
 
 .value {

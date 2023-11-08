@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 import { PayloadAction } from '@reduxjs/toolkit'
 import { addCompletedGame, fetchCurrentUser } from '../helpers/thunks'
 
-
 interface IUserReducer {
 	status: string
 	error: string | undefined
@@ -28,7 +27,6 @@ const initialState:IUserReducer = {
 		completed_games: []
 	}
 }
-
 
 export const userSlice = createSlice({
 	name: "user",

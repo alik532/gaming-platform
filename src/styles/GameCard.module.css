@@ -103,3 +103,13 @@
 	background-color: black;
 	color: #80f428;
 }
+
+@media (orientation: landscape) {
+	.buttonsWrapper {
+		gap: 8px;
+		flex-direction: row;
+	}
+	.buttonsWrapper > button {
+		width: unset;
+	}
+}

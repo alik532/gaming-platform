@@ -11,12 +11,15 @@ import GenreItem from '../components/GenreItem'
 import Title from '../components/Title'
 import GameCard from '../components/GameCard'
 import MainButton from '../components/MainButton'
+import { useNavigate } from 'react-router-dom'
 
 const Feed = () => {
 
 	const fetchGames = () => {
 		axios.get(`https://api.rawg.io/api/games?key=7fc5502620c64a2da2116a770ca355ea&page=${!games.length ? 1 : games.length / 20 + 1}`,).then((response: AxiosResponse<IGamesResponse>) => {games.length === 0 ? setGames(response.data.results) : setGames(prev => [...prev, ...response.data.results])})
 	}
+
+	const navigate = useNavigate()
 
 	const [games, setGames] = useState<Array<IGame>>([])
 	const otherGames = games.slice(5, games.length)
@@ -41,7 +44,7 @@ const Feed = () => {
 			<Header/>
 			<div className={classes.hero}>
 				<div className={classes.heroButton}>
-					<MainButton isPatterned={true} text='Explore'/>
+					<MainButton isPatterned={true} text='Explore' onClick={() => {navigate(`/game/${heroGames[heroGameIndx].id}`)}}/>
 				</div>
 				<img src={heroGames[heroGameIndx].background_image} alt="" className={classes.heroImg}/>
 				<div className={classes.content}>

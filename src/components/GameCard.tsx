@@ -17,11 +17,11 @@ const GameCard:FC<Pick<IGame, 'background_image' | 'name' | 'genres' | 'id'>> = 
 		<div className={classes.img} style={{backgroundImage: `url(${background_image})`}}>
 			<div className={classes.genres}>
 				{genres.map(genre => 
-					<GenreItem name={genre.name} img={genre.image_background}/>
+					<GenreItem key={genre.id} name={genre.name} img={genre.image_background}/>
 				)}
 			</div>
 			<div className={classes.buttonsWrapper}>
-				<button className={classes.exploreButton}>Explore</button>
+				<button className={classes.exploreButton} onClick={() => navigate(`/game/${id}`)}>Explore</button>
 				<button className={classes.completedButton} onClick={auth.currentUser ? () => dispatch(addCompletedGame(id)) : () => navigate('/signin')}>Mark as completed</button>
 			</div>
 		</div>
