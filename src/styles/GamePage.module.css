@@ -113,6 +113,7 @@
 }
 
 .mediaWrapper {
+	gap: 5px;
 	display: flex;
 	flex-direction: column;
 }
@@ -125,10 +126,14 @@
 }
 
 .imgSwitchers {
+	gap: 5px;
 	display: flex;
 }
 
 .imgSwitch {
+	transition: .2s;
+	background-repeat: no-repeat;
+	border-radius: 8px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -138,7 +143,17 @@
 	height: 150px;
 }
 
+.imgSwitch:hover {
+	cursor: pointer;
+	background-size: cover;
+}
+
+.imgSwitch:hover .switchIconWrapper {
+	transform: scale(1.1);
+}
+
 .switchIconWrapper {
+	transition: .2s;
 	border-radius: 50%;
 	padding: 4px;
 	display: flex;
@@ -151,4 +166,168 @@
 	stroke: 1px;
 	width: 50px;
 	height: 50px;
+}
+
+.about {
+	box-shadow: black 0px 0px 20px 4px;
+	background-color: #121212;
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.aboutTitle {
+	font-size: 25px;
+	color: #747474;
+}
+
+.about {
+	border-radius: 50px;
+	padding: 20px;
+	row-gap: 20px;
+	column-gap: 10px;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.description {
+	grid-column: 1 / 3;
+}
+
+.aboutValues {
+	gap: 5px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	display: flex;
+}
+
+.ratings {
+	box-shadow: black 0px 0px 20px 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: #121212;
+	padding: 20px;
+	border-radius: 50px;
+}
+
+.rating {
+	align-items: center;
+	display: flex;
+	gap: 5px;
+	border-radius: 50px;
+}
+
+.dot {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+}
+
+.ratingList {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ratingValue {
+	color: #747474;
+}
+
+.gameInfo {
+	margin-bottom: 100px;
+}
+
+.ratingNumbers {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+
+@media (orientation: landscape) {
+	.heroName {
+		font-size: 14vh;
+	}
+
+	.heroInfoWrapper {
+		order: 0;
+		flex-direction: row;
+	}
+
+	.heroDataWrapper {
+		margin-top: 10vh;
+	}
+
+	.heroInfoName {
+		font-size: 20px;
+	}
+
+	.heroInfoValue {
+		font-size: 25px;
+	}
+
+	.heroInfoIcon {
+		width: 40px;
+		height: 40px;
+	}
+
+	.metascore {
+		font-size: 28px;
+	}
+
+	.heroRatingName {
+		font-size: 24px;
+	}
+
+	.heroRating {
+		font-size: 28px;
+	}
+
+	.imgSwitchers {
+		width: 40%;
+		flex-direction: column;
+	}
+
+	.mediaWrapper {
+		margin-bottom: 50px;
+		flex-direction: row;
+	}
+
+	.selectedImg {
+		width: 100%;
+		height: 700px;
+	}
+
+	.imgSwitch {
+		width: 100%;
+		height: 350px;
+	}
+
+	.gameInfo {
+		font-weight: 100;
+		letter-spacing: 0.7px;
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+	}
+
+	.aboutValues {
+		font-weight: 100;
+	} 
+
+	.about, .ratings {
+		padding: 35px;
+	}
+
+	.aboutWrapper {
+		width: 50%;
+	}
+
+	.ratingWrapper {
+		width: 50%;
+	}
+
+	.ratingList {
+		justify-content: space-evenly;
+	}
 }

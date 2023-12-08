@@ -15,7 +15,7 @@ export interface IGameScreenshotsResponse {
 export interface IScreenshot {
 	id: string;
 	image: string,
-	is_deleted: boolean
+	is_deleted: boolean,
 }
 
 
@@ -24,7 +24,7 @@ export interface IGameDetailsResponse extends IGame {
 	description_raw: string,
 	developers: Array<IDeveloper>,
 	esrb_rating: {id: number, name: string},
-	platform: Array<IPlatform>
+	platforms: Array<IPlatform>
 }
 
 export interface IDeveloper {
@@ -46,11 +46,12 @@ export interface IGame {
 	id: number,
 	name: string,
 	metacritic: number,
-	parent_platforms: Array<IPlatform>,
+	parent_platforms: Array<{platform: IPlatform}>,
 	genres: Array<IGenre>,
 	released: string,
 	playtime: number,
-	ratings: Array<IRating>
+	ratings: Array<IRating>,
+	publishers: Array<{id: number, name: string}>
 }
 
 export interface IPlatform {

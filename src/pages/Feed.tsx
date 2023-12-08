@@ -56,7 +56,7 @@ const Feed = () => {
 					</div>
 					<div className={classes.info}>
 						<div className={classes.platforms}>
-							{platforms.filter(pl => heroGames[heroGameIndx].parent_platforms.find(pp => pp.slug == pl.slug) == null).map(platform => 
+							{platforms.filter(pl => heroGames[heroGameIndx].parent_platforms.find(pp => pp.platform.slug == pl.slug) == null).map(platform => 
 								<div className={classes.heroPlatform} key={platform.slug}>
 									<platform.icon className={classes.heroPlatformIcon}/>
 								</div>	
@@ -72,7 +72,7 @@ const Feed = () => {
 						<h2 className={classes.heroTitle}>Ratings</h2>
 						<div className={classes.ratingsList}>
 							{heroGames[heroGameIndx].ratings.map(rating => 
-								<RatingItem key={rating.id} title={rating.title} percent={rating.percent} />	
+								rating.title && <RatingItem key={rating.id} title={rating.title} percent={rating.percent} />
 							)}
 						</div>
 					</div>

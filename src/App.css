@@ -12,6 +12,7 @@ body {
 	color: var(--white);
 	font-size: 40px;
 	margin: 30px 0px;
+	letter-spacing: 3.5px;
 }
 
 @media (orientation: landscape) {

@@ -30,3 +30,14 @@ export const developers = [
 	{icon: EASVG, name: "Electronic Arts", projects: 326},
 	{icon: capcomSVG, name: "Capcom", projects: 447},
 ]
+
+interface colorsData {
+	[key: string]: string[];
+}
+
+export const ratingColors:colorsData = {
+	exceptional: ["#AFDB01", "#0FBB00"],
+	recommended:["#00D2DF", "#0400BB"],
+	meh:["#ED8E00", "#D22600"],
+	skip: ["#D22600", "#3F00C6"]
+}
