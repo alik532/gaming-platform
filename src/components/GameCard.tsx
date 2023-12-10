@@ -14,6 +14,7 @@ const GameCard:FC<Pick<IGame, 'background_image' | 'name' | 'genres' | 'id' >> =
 	const dispatch = useAppDispatch()
 
 	const completedGamesList = useAppSelector(state => state.userReducer.data.completed_games)
+	console.log(completedGamesList)
 	const isCompleted = completedGamesList.includes(id)
 
   return (

@@ -46,7 +46,7 @@ const RegisterForm = () => {
 			const userCred = await createUserWithEmailAndPassword(auth, email, password)
 			console.log(userCred.user.uid)
 			// we get document ref with signed in user Id
-			await setDoc(doc(db, 'users', userCred.user.uid), {name: username} )
+			await setDoc(doc(db, 'users', userCred.user.uid), {name: username, completed_games: []} )
 			// we get user data from firestore
 			console.log('redirected')
 			navigate('/')

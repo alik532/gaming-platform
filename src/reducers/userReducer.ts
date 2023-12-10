@@ -54,6 +54,7 @@ export const userSlice = createSlice({
 					state.status = 'error'
 					return;
 				}
+				console.log(action.payload)
 				state.data = action.payload
 			})
 			.addCase(fetchCurrentUser.rejected, (state, action) => {
